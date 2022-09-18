@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route }  from "react-router-dom";
+import Home from "./pages/Home";
+import Plan from "./pages/Plan";
+import Excercises from "./pages/Excercises";
+import Footer from "./components/Footer";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHouse, faDumbbell, faBook } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faHouse, faDumbbell, faBook);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="app">
+        <div className="app__column-left"> 
+          <Navbar />
+          <Footer />
+        </div>
+        <div className="app__column-right">
+          <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="plan" element={<Plan />} />
+              <Route path="excercises" element={<Excercises />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
