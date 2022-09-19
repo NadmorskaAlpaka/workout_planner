@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer>
             <figure className='footer__img--wrapper'>
-                <img src={LogoImage} alt="Logo of Soovo" />
+                <img src={LogoImage} alt="Logo of Soovo" className='footer__logo'/>
             </figure>
             <p className='copyrights'>
                 Copyright &copy; 2022 Soovo

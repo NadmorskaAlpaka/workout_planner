@@ -11,7 +11,8 @@
 /* ====== MENU ====== 
     1.General
     2.App
-    3.Navbar
+    3.Bar
+    4.Navbar
 */
 
 /*
@@ -21,7 +22,18 @@
 */
 
 :root{
-  --main-color: #5E4DFE;
+  --main-color: #916fc8;
+  --accent-color: #e8eaef;
+  --white: #ffffff; 
+  --black: #000000;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul{
+  list-style-type: none;
 }
 
 /*
@@ -30,48 +42,104 @@
 
 */
 
-.app{
+.layout{
   display: flex;
 }
 
-.app__column-left{
-  min-width: 250px;
-  min-height: 100vh;
-  background: linear-gradient(291deg, #9e94ff, #5e4dfe);
-  background-size: 400% 400%;
-
-  -webkit-animation: background-gradient 12s ease infinite;
-  -moz-animation: background-gradient 12s ease infinite;
-  animation: background-gradient 12s ease infinite;
+.layout__column-left{
+  background-color: var(--accent-color);
+  width: 250px;
 }
 
-.app__column-right{
+.layout__column-right{
+  background-color: var(--white);
+  width: calc(100% - 250px);
+}
+
+.open-navbar .layout__column-left{
+  width: 0;
+}
+
+.open-navbar .layout__column-right{
   width: 100%;
-  padding: 0 24px;
+}
+
+.layout__column-right,
+.layout__column-left{
+  min-height: calc(100vh - 40px);
+  transition: all 300ms ease;
+}
+
+/*
+
+        3.Bar
+
+*/
+
+.bar{
+  padding: 4px 20px;
+  width: 100%;
+  height: 40px; 
+  background-color: var(--main-color);
+}
+
+.bar__container{
+  max-width: 1440px;
   display: flex;
   align-items: center;
+}
+
+.logo__link{
+  display: flex;
+  margin-left: 16px;
+}
+
+.logo{
+  width: 120px;
+}
+
+.open-icon,
+.close-icon{
+  font-size: 32px;
+  color: var(--white);
+}
+
+.open-icon{
+  transform: rotate(90deg);
+  display: none;
+}
+
+.open-navbar .close-icon{
+  display: none;
+
+}
+
+.open-navbar .open-icon{
+  display: block;
+}
+
+/*
+
+        4.Navbar
+
+*/
+nav{
+  padding: 10px;
+}
+
+.nav__container{
+  display: flex;
   justify-content: center;
-
-  background: linear-gradient(291deg, #5e4dfe, #9e94ff);
-  background-size: 400% 400%;
-
-  -webkit-animation: background-gradient 15s ease infinite;
-  -moz-animation: background-gradient 15s ease infinite;
-  animation: background-gradient 15s ease infinite;
 }
 
-@-webkit-keyframes background-gradient {
-  0%{background-position:19% 0%}
-  50%{background-position:82% 100%}
-  100%{background-position:19% 0%}
+.nav_list{
+  opacity: 1;
+  transition: all 100ms ease;
 }
-@-moz-keyframes background-gradient {
-  0%{background-position:19% 0%}
-  50%{background-position:82% 100%}
-  100%{background-position:19% 0%}
+
+.open-navbar .nav_list{
+  opacity: 0;
 }
-@keyframes background-gradient {
-  0%{background-position:19% 0%}
-  50%{background-position:82% 100%}
-  100%{background-position:19% 0%}
-}
+
+
+

@@ -5,24 +5,28 @@ import Plan from "./pages/Plan";
 import Excercises from "./pages/Excercises";
 import Footer from "./components/Footer";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHouse, faDumbbell, faBook } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faDumbbell, faBook, faBars, faChartSimple} from '@fortawesome/free-solid-svg-icons';
+import Bar from "./components/Bar";
 
-library.add(faHouse, faDumbbell, faBook);
+library.add(faHouse, faDumbbell, faBook, faBars, faChartSimple);
 
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
-        <div className="app__column-left"> 
-          <Navbar />
-          <Footer />
-        </div>
-        <div className="app__column-right">
-          <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="plan" element={<Plan />} />
-              <Route path="excercises" element={<Excercises />} />
-          </Routes>
+        <Bar />
+        <div className="layout">
+          <div className="layout__column-left"> 
+            <Navbar />
+            <Footer />
+          </div>
+          <div className="layout__column-right">
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="plan" element={<Plan />} />
+                <Route path="excercises" element={<Excercises />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </BrowserRouter>
