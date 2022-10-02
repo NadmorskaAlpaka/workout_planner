@@ -13,6 +13,8 @@
     2.App
     3.Bar
     4.Navbar
+    5.Footer
+    6.Home
 */
 
 /*
@@ -36,6 +38,10 @@ ul{
   list-style-type: none;
 }
 
+img{
+  width: 100%;
+}
+
 /*
 
         2.App
@@ -46,28 +52,37 @@ ul{
   display: flex;
 }
 
-.layout__column-left{
-  background-color: var(--accent-color);
+.layout__column--left{
+  background-color: var(--main-color);
   width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.layout__column-right{
+.layout__column--right{
   background-color: var(--white);
   width: calc(100% - 250px);
 }
 
-.open-navbar .layout__column-left{
+.open-navbar .layout__column--left{
   width: 0;
 }
 
-.open-navbar .layout__column-right{
+.open-navbar .layout__column--right{
   width: 100%;
 }
 
-.layout__column-right,
-.layout__column-left{
+.layout__column--right,
+.layout__column--left{
   min-height: calc(100vh - 40px);
   transition: all 300ms ease;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
 }
 
 /*
@@ -77,13 +92,24 @@ ul{
 */
 
 .bar{
-  padding: 4px 20px;
+  position: relative;
+  padding: 4px 0;
   width: 100%;
   height: 40px; 
   background-color: var(--main-color);
 }
 
+.bar::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #c29dff;
+}
+
 .bar__container{
+  margin: 0 20px;
   max-width: 1440px;
   display: flex;
   align-items: center;
@@ -124,12 +150,12 @@ ul{
 
 */
 nav{
-  padding: 10px;
+  padding: 20px;
 }
 
 .nav__container{
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .nav_list{
@@ -140,6 +166,58 @@ nav{
 .open-navbar .nav_list{
   opacity: 0;
 }
+
+.nav__list--element{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav__list--element:not(:last-child){
+  margin-bottom: 4px;
+}
+
+.nav__icon,
+.nav__list--link{
+  color: var(--white);
+  font-size: 1.8rem;
+}
+
+.nav__icon{
+  width: 100%;
+  max-width: 26px;
+}
+
+.nav__list--link{
+  margin-left: 24px;
+}
+
+/*
+
+        5.Footer
+
+*/
+
+footer{
+  padding: 0 20px 20px 20px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyrights{
+  margin-top: 8px;
+  color: var(--white);
+}
+
+/*
+
+        6.Home
+
+*/
+
 
 
 

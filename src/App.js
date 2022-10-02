@@ -16,16 +16,18 @@ function App() {
       <div className="app">
         <Bar />
         <div className="layout">
-          <div className="layout__column-left"> 
+          <div className="layout__column--left"> 
             <Navbar />
             <Footer />
           </div>
-          <div className="layout__column-right">
-            <Routes>
+          <div className="layout__column--right">
+            <div className="container">
+              <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="plan" element={<Plan />} />
                 <Route path="excercises" element={<Excercises />} />
-            </Routes>
+              </Routes>
+            </div>
           </div>
         </div>
       </div>
