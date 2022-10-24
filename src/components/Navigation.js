@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Excercises = () => {
+const Navigation = () => {
     return (
         <div>
-            Excercises
+            navigation
         </div>
     );
 }
 
-export default Excercises;
+export default Navigation;
