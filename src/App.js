@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route }  from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHouse, faDumbbell, faBook, faBars, faChartSimple} from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Logo from './components/Logo.js';
 import Navigation from './components/Navigation.js';
 import Homepage from './pages/Homepage.js';
 
-library.add(faHouse, faDumbbell, faBook, faBars, faChartSimple);
+library.add(faBars);
 
 function App() {
   return (
