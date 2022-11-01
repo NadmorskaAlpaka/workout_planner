@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
     const clsoseNavigation = () => {
@@ -18,7 +19,9 @@ const Logo = () => {
                 <FontAwesomeIcon className='toggle__bar2' icon="fa-solid fa-bars" onClick={openNavigation}/>
             </div>
             <div className='logo__wrapper'>
-                <span className='logo__name'>soovo</span>
+                <Link to="/">
+                    <span className='logo__name'>soovo</span>
+                </Link>
             </div>
         </div>
     );
