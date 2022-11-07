@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route }  from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faHouse } from '@fortawesome/free-solid-svg-icons';
 import Logo from './components/Logo.js';
 import Navigation from './components/Navigation.js';
 import Homepage from './pages/Homepage.js';
 import Exercises from './pages/Exercises.js';
 
-library.add(faBars);
+library.add(faBars, faHouse);
 
 function App() {
   return (
@@ -17,12 +17,12 @@ function App() {
           <div className="layout__navigation">
             <Navigation /> 
           </div>
-          <div className="layout__main">
+          <main className="layout__main">
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="exercises" element={<Exercises />} />
             </Routes>
-          </div>
+          </main>
         </div>
       </div>
     </BrowserRouter>

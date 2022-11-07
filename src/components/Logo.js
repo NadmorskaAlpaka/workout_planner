@@ -13,7 +13,7 @@ const Logo = () => {
         console.log("open");
     }
     return (
-        <div className='logo__container'>
+        <header className='logo__container'>
             <div className='toogle__bar--wrapper'>
                 <FontAwesomeIcon className='toggle__bar' icon="fa-solid fa-bars" onClick={clsoseNavigation}/>
                 <FontAwesomeIcon className='toggle__bar2' icon="fa-solid fa-bars" onClick={openNavigation}/>
@@ -23,7 +23,7 @@ const Logo = () => {
                     <span className='logo__name'>soovo</span>
                 </Link>
             </div>
-        </div>
+        </header>
     );
 }
 

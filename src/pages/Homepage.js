@@ -11,10 +11,10 @@ const Homepage = () => {
                 <p className='homepage__text'>
                     and it will all make sens
                 </p>
-                <h1 className='homepage__button--text'>
+                {/* <h1 className='homepage__button--text'>
                     start your path here
-                </h1>
-                <Link to="/exercises">
+                </h1> */}
+                <Link to="/exercises" className='homepage__button'>
                     Get started!
                 </Link>
             </div>
